@@ -7,7 +7,7 @@ I'm Tommy from Sydney, Australia, and I am currently studying Bachelor of Advanc
 Skills: Python / C / HTML / CSS / Webflow / Wordpress
 
 - 🔭 I’m currently working on becoming a programmer.  
-- 🌱 I’m currently learning HTML, CSS, Python
+- 🌱 I’m currently learning HTML, CSS, Python, Java
 - 👯 I’m looking to collaborate on anyone who loves to program 
 
 To see the learning I have done, please view my repository where I showcase everything that I have been learning to become a better programmer. 
