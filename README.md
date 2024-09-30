@@ -4,7 +4,7 @@
 
 I'm Tommy from Sydney, Australia, and I am currently studying Bachelor of Advanced Computing at the University of Sydney. Over the past two years, I have developed a passion for programming. Through learning to code, I have gained a deeper understanding of the importance of programmers and how we positively impact the broader community. I am proud to be a part of this community and hope to further develop my skills to be more involved in the wonderful world that programming offers.
 
-Skills: Python / C / HTML / CSS / Webflow / Wordpress
+Skills: Python / C / HTML / CSS / Webflow / Wordpress / Java
 
 - 🔭 I’m currently working on becoming a programmer.  
 - 🌱 I’m currently learning HTML, CSS, Python, Java
