@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+  <script type="application/javascript">
+    function getsearchtarget() {
+      var e = document.getElementById("searchtarget");
+      var formaction = e.options[e.selectedIndex].value;
+      document.searchform.action = formaction;
+    }
+  </script>
+  <title>{{ page.title }}</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Travel</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        {% if session.logged_in %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              View/Manage Users
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{{ url_for('list_users') }}">List Users</a>
+              <a class="dropdown-item" href="{{ url_for('search_users_byname') }}">User Search</a>
+              {% if session['isadmin'] %}
+                <a class="dropdown-item" href="{{ url_for('add_user') }}">Add User</a>
+              {% endif %}
+              <a class="dropdown-item" href="{{ url_for('list_user_stats') }}">User Stats</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{{ url_for('list_consolidated_users') }}">User Details (Advanced)</a>
+            </div>
+          </li>
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownFlights" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                View/Manage Flights
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownFlights">
+                <a class="dropdown-item" href="{{ url_for('show_all_flights') }}">List Flights</a>
+                
+                <a class="dropdown-item" href="{{ url_for('search_flight_by_id', flight_id=1) }}">Flight Search</a>
+                
+                {% if session['isadmin'] %}
+                    <a class="dropdown-item" href="{{ url_for('add_flight') }}">Add Flight</a>
+                {% endif %}
+                
+                <a class="dropdown-item" href="{{ url_for('flight_summary') }}">Airport Summary</a>
+            </div>
+        </li>
+        
+        
+        {% endif %}
+        
+        <li class="nav-item">
+          <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% endwith %}
+</body>
+</html>

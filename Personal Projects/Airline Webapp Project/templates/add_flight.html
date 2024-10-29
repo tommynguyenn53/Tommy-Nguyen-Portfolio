@@ -1,0 +1,52 @@
+{% include 'top.html' %}
+
+<div class="content">
+    <div class="container my-4">
+
+        <h2 class="title"> Add New Flight </h2>
+
+        <form class="needs-validation" method="POST" action="{{ url_for('add_flight') }}" novalidate>
+
+            <div class="form-group">
+                <label for="flight_number">Flight Number:</label>
+                <input type="text" class="form-control" id="flight_number" name="flight_number" placeholder="Enter flight number" required>
+                <div class="invalid-feedback">Please enter a flight number.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="departure_airport">Departure Airport ID:</label>
+                <input type="text" class="form-control" id="departure_airport" name="departure_airport" placeholder="Enter departure airport ID" required>
+                <div class="invalid-feedback">Please enter a departure airport ID.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="arrival_airport">Arrival Airport ID:</label>
+                <input type="text" class="form-control" id="arrival_airport" name="arrival_airport" placeholder="Enter arrival airport ID" required>
+                <div class="invalid-feedback">Please enter an arrival airport ID.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="departure_time">Departure Time:</label>
+                <input type="datetime-local" class="form-control" id="departure_time" name="departure_time" required>
+                <div class="invalid-feedback">Please enter a valid departure time.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="arrival_time">Arrival Time:</label>
+                <input type="datetime-local" class="form-control" id="arrival_time" name="arrival_time" required>
+                <div class="invalid-feedback">Please enter a valid arrival time.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="aircraft_id">Aircraft ID:</label>
+                <input type="text" class="form-control" id="aircraft_id" name="aircraft_id" placeholder="Enter aircraft ID" required>
+                <div class="invalid-feedback">Please enter an aircraft ID.</div>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Add Flight</button>
+        </form>
+
+    </div>
+</div>
+
+{% include 'end.html' %}
