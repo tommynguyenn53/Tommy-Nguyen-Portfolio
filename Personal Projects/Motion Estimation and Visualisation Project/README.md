@@ -1,0 +1,1 @@
+To run code, simply first run every block using the run all button and then python window should display showing the motion changes of the monkey video. (Will take a while for video to load up)
